@@ -1,0 +1,138 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "\5FAE\8F6F\96C5\9ED1", "source han sans cn", "HanHeiSc", Calibri;
+}
+body {
+	position:relative;
+	margin: 0 auto;
+	min-width: 1200px;
+	font-size: 14px;
+}
+body::-webkit-scrollbar,
+[setbar]::-webkit-scrollbar {
+	width: 6px; height: 6px;
+}
+body::-webkit-scrollbar-button,
+[setbar]::-webkit-scrollbar-button {
+	height: 0;
+}
+body::-webkit-scrollbar-track,
+[setbar]::-webkit-scrollbar-track {		/*--轨道--*/
+	background-color: #ddd;
+}
+body::-webkit-scrollbar-thumb,
+[setbar]::-webkit-scrollbar-thumb {		/*--滑块--*/
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);  
+    background-color: #999;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-weight: 400;
+}
+a, .link, .btn {
+	color: blue;
+	cursor: pointer;
+	text-decoration: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+	-webkit-user-drag: none;
+}
+li, ol {
+	list-style: none;
+}
+img {
+	display: inline-block;
+	border: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+	-webkit-user-drag: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+input {
+	border: none;
+	border-bottom: 1px solid #ddd;
+	box-sizing: border-box;
+	font-size: 12px;
+	transition: all 100ms linear;
+	background-color: transparent;
+}
+input, textarea, button, select, label {
+	outline: none;
+	border-radius: 0;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	font-family: "\5FAE\8F6F\96C5\9ED1", "source han sans cn", "HanHeiSc", Calibri;
+}
+input[readonly],
+input[disabled] {
+	cursor: no-drop;
+}
+input::-webkit-input-placeholder {
+	color: #aaa;
+	transition: color.5s;
+	-webkit-transition: color.5s;
+}
+input:focus::-webkit-input-placeholder {
+	color: #c2c2c2;
+}
+input::-ms-clear, input::-ms-reveal{	/*--clear去掉叉  reveal去掉眼睛/IE10+--*/
+     display: none;
+}
+select::-ms-expand {	/*--去掉select右边的部分/IE10+--*/
+    display: none;
+}
+.iconfont, a, img {
+	user-select: none;
+}
+
+/*-----media-----*/
+@media (min-width: 341px) and (max-width: 390px) {}	/*--iphone6/6s/7/x--*/
+@media (min-width: 391px) and (max-width: 440px) {}	/*--iphone plus版本--*/
+@media (min-width: 441px) and (max-width: 800px) {}	/*--ipad--*/
+@media (min-width: 801px) {}	/*--ipad pro/PC--*/
+@media (max-height: 470px) {}	/*--iphone/5/5c/se safari浏览器--*/
+
+[ellipsis] {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+[clear]::after {
+	content: '';
+	display: block;
+	clear: both;
+	height: 0;
+}
+[justify] {
+	text-align: justify;
+}
+[justify]::after {
+	content: '';
+    display: inline-block;
+    width: 100%;
+}
+
+[lb] { background-color: #c9eaf5 }
+[aq] { background-color: antiquewhite } /* 古董白 */
+[ab] { background-color: aliceblue } /* 艾莉斯蓝 */
+[bg] { background-color: beige } /* 米黄色 */
+[tt] { background-color: thistle } /* 蓟色，淡紫红色 */
+[wt] { background-color: wheat } /* 麦黄色 */
+[ba] { background-color: blanchedalmond } /* 杏仁白 */
+[lc] { background-color: lemonchiffon } /* 粉黄 */
+[ws] { background-color: whitesmoke } /* 烟白色 */
+[cb] { background-color: cornflowerblue } /* 矢车菊蓝色 */
+[si] { background-color: silver } /* 银白色 */
+[le] { background-color: lemonchiffon } /* 粉黄色 */
+[db] { background-color: dodgerblue } /* 宝蓝色 */
+[dg] { background-color: darkseagreen } /* 海藻率 */
+[in] { background-color: indianred } /* 印度红 */
+[lsy] { background-color: lightskyblue } /* 天蓝色 */
+[sk] { background-color: skyblue } /* 天蓝色 */
+[lg] { background-color: lightgreen } /* 亮绿色 */
+[bw] { background-color: burlywood } /* 木头色 */

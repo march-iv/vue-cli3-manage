@@ -8,8 +8,16 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "animate.css": "^4.1.1",
+    "axios": "^0.24.0",
     "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "element-ui": "^2.15.6",
+    "md5": "^2.3.0",
+    "qs": "^6.10.1",
+    "view-design": "4.6.1",
+    "vue": "^2.6.11",
+    "vue-router": "3.5.3",
+    "vuex": "3.6.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -18,6 +26,8 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "less": "4.1.2",
+    "less-loader": "7.3.0",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
@@ -32,7 +42,54 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
-    "rules": {}
+    "rules": {
+      "generator-star-spacing": "off",
+      "quotes": [
+        0,
+        "double"
+      ],
+      "vue/no-parsing-error": [
+        2,
+        {
+          "x-invalid-end-tag": false
+        }
+      ],
+      "semi": [
+        0
+      ],
+      "indent": [
+        0,
+        "tab"
+      ],
+      "no-tabs": "off",
+      "no-unused-vars": [
+        0
+      ],
+      "no-mixed-spaces-and-tabs": "off",
+      "camelcase": [
+        0
+      ],
+      "no-multi-spaces": [
+        0
+      ],
+      "eol-last": [
+        0
+      ],
+      "no-multiple-empty-lines": [
+        0
+      ],
+      "object-property-newline": [
+        0
+      ],
+      "no-trailing-spaces": [
+        0
+      ],
+      "one-var": [
+        0
+      ],
+      "no-new": "off",
+      "eqeqeq": "off"
+    }
   },
   "browserslist": [
     "> 1%",
