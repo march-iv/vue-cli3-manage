@@ -1,9 +1,11 @@
 import axios from "axios"
 import qs from "qs"
+import router from '@/router'
 import { Message } from 'view-design'
 
 let axiosInstance = axios.create({
 	timeout: 1000 * 30,
+	headers: {},
 	withCredentials: false,
 	baseURL: process.env.VUE_APP_BASE_API,
 })

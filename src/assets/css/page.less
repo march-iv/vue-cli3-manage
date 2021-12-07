@@ -1,0 +1,82 @@
+.page {
+	height: 100%;
+	overflow: auto;
+	background-color: #fff;
+}
+.page-sou {
+	padding: 20px 20px 0;
+	display: flex;
+	background-color: #fff;
+	ul {
+		flex: 1 1 auto;
+		display: flex;
+		flex-wrap: wrap;
+	}
+	ul.close {
+		height: 55px;
+		overflow: hidden;
+	}
+	li {
+		flex: 0 1 33%;
+	}
+	.ivu-date-picker {
+		width: 100%;
+	}
+	.ivu-form-item-content {
+		display: flex;
+		align-items: center;
+		padding-right: 20px;
+		> span { flex: 0 0 80px;  }
+		> div { flex: 1 1 auto;  }
+	}
+	div.btns {
+		flex: 0 0 210px;
+		.ivu-form-item-content {
+			padding-right: 0;
+		}
+	}
+}
+@media (min-width: 1800px) {
+	.page-sou li {
+		flex: 0 1 25%;
+	}
+}
+.page-dispose {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 20px;
+}
+
+.page-table-wrap {
+	padding: 20px;
+	
+	.count {
+		line-height: 45px;
+		border: 1px solid #DADCE0;
+		border-top: none;
+		background-color: #FAFAFA;
+		text-indent: 1em;
+	}
+}
+
+
+.page-dom-table {
+	width: 90%;
+	max-width: 1000px;
+	border: 1px solid #ddd;
+	td, th {
+		padding: 3px 0;
+		text-indent: 1em;
+		line-height: 24px;
+	}
+	td:first-child, th:first-child  {
+		
+		background-color: #F3F9FE;
+	}
+	td + td, th + th {
+		border-left: 1px solid #ddd;
+	}
+	tr {
+		border-bottom: 1px solid #ddd;
+	}
+}

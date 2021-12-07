@@ -8,6 +8,7 @@ body {
 	position:relative;
 	margin: 0 auto;
 	min-width: 1200px;
+	max-width: 2440px;
 	font-size: 14px;
 }
 body::-webkit-scrollbar,
@@ -115,6 +116,18 @@ select::-ms-expand {	/*--去掉select右边的部分/IE10+--*/
 	content: '';
     display: inline-block;
     width: 100%;
+}
+[required]::before {
+	content: '*';
+	color: red;
+	margin-right: 3px;
+}
+
+[fl] {
+	float: left;
+}
+[fr] {
+	float: right;
 }
 
 [lb] { background-color: #c9eaf5 }
