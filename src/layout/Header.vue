@@ -12,7 +12,7 @@
 				</Tooltip>
 				<Tooltip placement="bottom" content="消息" :delay="100">
 					<router-link to="/" custom v-slot="{ navigate }">
-						<i class="iconfont">&#xe663;</i>消息
+						<span><i class="iconfont">&#xe663;</i>消息</span>
 					</router-link>
 				</Tooltip>
 			</div>

@@ -8,15 +8,15 @@
 		<div class="page-dispose">
 			<div>
 				<router-link :to="'/addBank'" custom v-slot="{ navigate }">
-					<Button type="primary" @click="navigate">+新建</Button> &nbsp;
+					<span><Button type="primary" @click="navigate">+新建</Button> &nbsp;</span>
 				</router-link>
 				<Button @click="mixinExportExcel({})">导出excel</Button>
 			</div>
 		</div>
 		<div class="page-table-wrap" v-loading="table.load">
 			<Table border stripe
-				:width="t_Width"
-				:height="table.trs.length > 5 ? t_Height : '-'"
+				:width="mixin_table_Width"
+				:height="table.trs.length > 5 ? mixin_table_Height : '-'"
 				:columns="table.ths"
 				:data="table.trs" 
 				@on-sort-change="handleSortChange">
@@ -36,7 +36,7 @@
 			</Table>
 			<Page show-total show-sizer
 				:current="page.curr"
-				:page-size="p_limit"
+				:page-size="mixin_page_limit"
 				:total="page.total"
 				@on-change="mixinChangePage"
 				@on-page-size-change="mixinChangeLimit" />
@@ -62,7 +62,7 @@ export default {
 					{ title: '水果图标', slot: 'f_cover', align: 'center', minWidth: 100 },
 					{ title: '产地', key: 'chanDi', align: 'center', minWidth: 110 },
 					{ title: '主要消售地区', slot: 'origin', minWidth: 130 },
-					{ title: '上市日期', key: 'shangShi', align: 'center', minWidth: 146 },
+					{ title: '上市日期', key: 'shangShi', align: 'center', minWidth: 130 },
 					{ title: '批发价', key: 'piFa', minWidth: 80 },
 					{ title: '最低售价', key: 'shouJia', minWidth: 100 },
 					{ title: '执行标准', key: 'biaoZhun', align: 'center', minWidth: 120 },

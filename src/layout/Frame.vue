@@ -15,7 +15,12 @@
 				<Menu id="menu" setBar></Menu>
 				<div id="main">
 					<Crumb id="crumb" ws></Crumb>
-					<div id="View" ws><router-view/></div>
+					<div id="View" ws>
+						<keep-alive :max="1">
+							<router-view v-if="$route.meta.keepAlive" />
+						</keep-alive>
+						<router-view v-if="!$route.meta.keepAlive" />
+					</div>
 				</div>
 			</div>
 		</template>
@@ -62,7 +67,7 @@ export default {
 		#menu {
 			height: 100%;
 			overflow: auto;
-			flex: 0 0 180px;
+			flex: 0 0 200px;
 		}
 
 		#main {

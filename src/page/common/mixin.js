@@ -1,8 +1,9 @@
 let mixin = {
 	data () {
 		return {
+			mixin_page_limit: 10,
 			// 快捷日期选择
-			DatePickerRange: {
+			mixinDatePickerRange: {
             	shortcuts: [
 	                {
 	                    text: '近一周',
@@ -29,7 +30,10 @@ let mixin = {
 	                        return [start, end];
 	                    }
 	                }
-	            ]
+	            ],
+	            disabledDate (time) {
+                    return time.getTime() > (Date.now() - 86400000);
+                }
 	        }
 		}
 	},
@@ -40,22 +44,19 @@ let mixin = {
 		}
 	},
 	computed: {
-		p_limit () {
-			return this.$store.state.app.pageLimit
-		},
 		// 设置 iview table 宽度
-        t_Width () {
-            return window.innerWidth - 260
+        mixin_table_Width () {
+            return window.innerWidth - 280
         },
         // 设置 iview table 高度，对于大屏幕则不设置
-        t_Height () {
-        	return window.innerHeight > 1000 ? false : (window.innerHeight - 326)
+        mixin_table_Height () {
+        	return window.innerHeight > 900 ? "-" : (window.innerHeight - 326)
         }
     },
     methods: {
     	// 导出表格
     	mixinExportExcel ({name}) {
-    		console.log('导出表格')
+    		this.$Message.info('导出表格')
     	},
     	// 重置搜索条件
     	mixinReset (name) {

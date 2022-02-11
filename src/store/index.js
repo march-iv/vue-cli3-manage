@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import * as types from './mutation.js'
 
 Vue.use(Vuex)
 
@@ -15,9 +16,14 @@ const modules = modulesFiles.keys().reduce((modules, modulePath) => {
 export default new Vuex.Store({
 	modules,
 	state: {
-		fruit: '🍍'
+		fruit: '🍍',
+		year: 2022
 	},
 	getters: {},
-	mutations: {},
+	mutations: {
+		[types.SET_DAY] (state, day) {	// 使用 mutation.js 中的常量作为 Mutation 事件类型
+			state.year = day
+		}
+	},
 	actions: {}
 })

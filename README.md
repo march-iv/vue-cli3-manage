@@ -21,15 +21,20 @@ yarn lint       // 检查和修复文件
 		+ font: 字体目录
 		+ media: 媒体文件目录
 		+ script: 非模块化的JS目录
+			- Polyfill.js: 让旧浏览器也能支持 JS 新特性
+			- Prototype.js: 给内置的 JS 对象添加日常使用的属性或方法
 		- favicon.ico
 		- index.html
 
 + src
 	+ assets // 会经过 webpack 打包的资源
 		+ config: 项目配置目录
-			- layout.js: 配置布局
-		+ img: 图片目录
 		+ css: 样式目录
+			- package.less: 需要覆盖第三方组件的样式
+			- page.less: 业务页面公共部分的样式
+			- public.css: 全局样式
+			- variate.less: 样式变量
+		+ img: 图片目录
 		+ utils: 工具函数目录
 	
 	+ components // 全局公共组件
@@ -41,6 +46,7 @@ yarn lint       // 检查和修复文件
 		- Menu.vue: 菜单栏组件
 	
 	+ pages // 业务组件
+		+ account: 账户相关
 		+ common: 公共的业务组件
 	
 	+ request // 请求
@@ -72,8 +78,11 @@ yarn lint       // 检查和修复文件
 
 
 
+### 本地存储
 
+```bash
 
+```
 
 
 

@@ -1,3 +1,4 @@
+<!-- 左侧菜单 -->
 <template>
 	<div class="wrap">
 		<Menu ref="menu" :mode="'vertical'" :theme="'light'" :width="'100%'"
@@ -15,9 +16,9 @@
 
 			<Submenu name="2">
 				<template slot="title"><i class="iconfont">&#xe66f;</i>水果管理</template>
-				<MenuItem name="2-1" to="banana"><i class="iconfont">&#xe69e;</i>香蕉</MenuItem>
-				<MenuItem name="2-2" to="strawberry"><i class="iconfont">&#xe60c;</i>草莓</MenuItem>
-				<MenuItem name="2-3" to="durian"><i class="iconfont">&#xe624;</i>榴莲</MenuItem>
+				<MenuItem name="2-1" to="/banana"><i class="iconfont">&#xe69e;</i>香蕉</MenuItem>
+				<MenuItem name="2-2" to="/strawberry"><i class="iconfont">&#xe60c;</i>草莓</MenuItem>
+				<MenuItem name="2-3" to="/durian"><i class="iconfont">&#xe624;</i>榴莲</MenuItem>
 			</Submenu>
 
 			<Submenu name="3">
@@ -41,9 +42,16 @@ export default {
 			menuOpenNames: ['1']		// 当前展开的菜单组
 		}
 	},
+	watch: {
+		"$route": function (nv, ov) {
+			if (nv.meta.tier === 1) {
+				this.menuActiveName = this.$route.name
+			}
+		}
+    },
     created () {
     	// 项目首次打开时，或者刷新页面时，获取本地存储的菜单信息
-    	this.menuActiveName = localStorage.getItem('menuActiveName')
+    	this.menuActiveName = localStorage.getItem('menuActiveName') || '1-1'
     	this.menuOpenNames = JSON.parse(localStorage.getItem('menuOpenNames'))
     	this.$nextTick(() => {
     		// 需要放在 nextTick 里才能更新菜单状态
