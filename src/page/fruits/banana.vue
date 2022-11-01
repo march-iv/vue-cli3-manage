@@ -1,6 +1,8 @@
 <template>
 	<div class="page">
 		<i class="iconfont">&#xe69e;</i>
+		<p>{{$store.state.app.pageLimit}}</p>
+		<p>{{$store.state.fruit}}</p>
 	</div>
 </template>
 

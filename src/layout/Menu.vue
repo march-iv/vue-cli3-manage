@@ -8,8 +8,8 @@
 			@on-open-change="onOpenHandle">
 			<Submenu name="1">
 				<template slot="title"><Icon type="ios-paper" />常用布局</template>
-				<MenuItem name="1-1" to="search">搜索</MenuItem>
-				<MenuItem name="1-2" to="table">表格</MenuItem>
+				<MenuItem name="search" to="search">搜索</MenuItem>
+				<MenuItem name="table" to="table">表格</MenuItem>
 				<MenuItem name="1-3" :to="'/'">评论管理</MenuItem>
 				<MenuItem name="1-4" :to="'/'">举报管理</MenuItem>
 			</Submenu>
@@ -52,7 +52,7 @@ export default {
     created () {
     	// 项目首次打开时，或者刷新页面时，获取本地存储的菜单信息
     	this.menuActiveName = localStorage.getItem('menuActiveName') || '1-1'
-    	this.menuOpenNames = JSON.parse(localStorage.getItem('menuOpenNames'))
+    	this.menuOpenNames = JSON.parse(localStorage.getItem('menuOpenNames')) || ['1']
     	this.$nextTick(() => {
     		// 需要放在 nextTick 里才能更新菜单状态
     		this.$refs.menu.updateOpened()
@@ -65,6 +65,9 @@ export default {
 		},
 		onOpenHandle (arg) {	// 展开一个菜单分组
 			localStorage.setItem('menuOpenNames', JSON.stringify(arg))
+		},
+		look () {
+			console.log(arg)
 		}
 	}
 }
